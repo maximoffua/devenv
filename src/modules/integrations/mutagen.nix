@@ -45,7 +45,7 @@ in
         cat ${file} > ${configPath}
       fi
       mutagen daemon start
-      mutagen project -f ${configPath} start
+      mutagen project list -f ${configPath} 2>/dev/null || mutagen project start -f ${configPath}
     '';
   };
 }
